@@ -1,5 +1,17 @@
-import Image from "next/image";
+import HeaderBar from "@/components/HeaderBar";
+import SectionLibrary from "@/components/SectionLibrary";
+import PreviewSpace from "@/components/PreviewSpace";
 
 export default function Home() {
-  return <div className="bg-red-500">Home</div>;
+  return (
+    <div className="min-h-screen flex flex-col bg-gray-100">
+      <HeaderBar />
+      <div className="flex flex-1 overflow-hidden">
+        <div className="flex-1 py-6">
+          <PreviewSpace />
+        </div>
+        <SectionLibrary />
+      </div>
+    </div>
+  );
 }
