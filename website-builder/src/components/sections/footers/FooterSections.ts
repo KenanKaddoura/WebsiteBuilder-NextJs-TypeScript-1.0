@@ -9,8 +9,7 @@ export const MinimalFooter: FooterSection = {
   thumbnail: "https://wallpapershome.com/images/pages/ico_h/26788.jpg",
   brand: {
     name: "Rekaz",
-    blurb: "Building tools that help teams move faster.",
-    email: "hello@rekaz.dev",
+    email: "support@rekaz.dev",
   },
   columns: [
     {
@@ -30,9 +29,8 @@ export const MinimalFooter: FooterSection = {
     },
   ],
   socialLinks: [
-    { platform: "twitter", link: "https://x.com/rekaz" },
+    { platform: "x", link: "https://x.com/rekaz" },
     { platform: "linkedin", link: "https://linkedin.com/company/rekaz" },
-    { platform: "github", link: "https://github.com/rekaz" },
   ],
   bottom: {
     copyrightName: "Rekaz",
@@ -48,9 +46,6 @@ export const CompanyFooter: FooterSection = {
   thumbnail: "https://wallpapershome.com/images/pages/ico_h/26788.jpg",
   brand: {
     name: "Rekaz",
-    blurb:
-      "A platform for building delightful digital products with speed and confidence.",
-    address: "Dhahran Tech Park, KSA",
     email: "support@rekaz.dev",
   },
   columns: [
@@ -83,11 +78,8 @@ export const CompanyFooter: FooterSection = {
     },
   ],
   socialLinks: [
-    { platform: "twitter", link: "https://x.com/rekaz" },
-    { platform: "facebook", link: "https://facebook.com/rekaz" },
-    { platform: "instagram", link: "https://instagram.com/rekaz" },
+    { platform: "x", link: "https://x.com/rekaz" },
     { platform: "linkedin", link: "https://linkedin.com/company/rekaz" },
-    { platform: "github", link: "https://github.com/rekaz" },
   ],
   bottom: {
     copyrightName: "Rekaz",
@@ -107,7 +99,6 @@ export const EcommerceFooter: FooterSection = {
   thumbnail: "https://wallpapershome.com/images/pages/ico_h/26788.jpg",
   brand: {
     name: "Rekaz Store",
-    blurb: "Modern essentials for builders.",
   },
   columns: [
     {
@@ -137,18 +128,9 @@ export const EcommerceFooter: FooterSection = {
     },
   ],
   socialLinks: [
-    { platform: "instagram", link: "https://instagram.com/rekaz" },
-    { platform: "facebook", link: "https://facebook.com/rekaz" },
     { platform: "x", link: "https://x.com/rekaz" },
-    { platform: "youtube", link: "https://youtube.com/@rekaz" },
+    { platform: "linkedin", link: "https://linkedin.com/company/rekaz" },
   ],
-  newsletter: {
-    enabled: true,
-    heading: "Join our newsletter",
-    subtext: "Stay up to date with new drops and special offers.",
-    placeholder: "Enter your email",
-    ctaLabel: "Subscribe",
-  },
   bottom: {
     copyrightName: "Rekaz Store",
     links: [

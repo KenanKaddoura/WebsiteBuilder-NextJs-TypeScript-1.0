@@ -22,43 +22,35 @@ export interface HeroSection extends BaseSection {
 
 export interface ContentSection extends BaseSection {
   type: "content";
-  content: string;
-  layout: "single-column" | "two-column" | "three-column";
+  contentStyle: "two-columns-image" | "header-paragraph";
+  content: {
+    title?: string;
+    mainText: string;
+    secondaryText?: string;
+    imageUrl?: string;
+  };
 }
 
 // types/sections.ts
 export type FooterLink = { label: string; link: string };
 export type FooterColumn = { heading: string; links: FooterLink[] };
 
-export type SocialPlatform =
-  | "x" | "twitter" | "facebook" | "instagram" | "linkedin" | "youtube" | "github";
+export type SocialPlatform = "x" | "linkedin"
+
 
 export interface FooterSection extends BaseSection {
   type: "footer";
-  // New (optional) fields:
   brand?: {
     name?: string;
     logoUrl?: string;
-    blurb?: string;
-    address?: string;
     email?: string;
-    phone?: string;
   };
-  columns?: FooterColumn[];     // multiple link columns
+  columns?: FooterColumn[]; // multiple link columns
   socialLinks?: { platform: SocialPlatform; link: string }[];
-  newsletter?: {
-    enabled: boolean;
-    heading?: string;
-    subtext?: string;
-    placeholder?: string;
-    ctaLabel?: string;
-  };
   bottom?: {
-    copyrightName?: string;     // e.g. your company
-    links?: FooterLink[];       // e.g. Privacy, Terms, Sitemap
+    copyrightName?: string; // e.g. your company
+    links?: FooterLink[]; // e.g. Privacy, Terms, Sitemap
   };
-
   // For backward compat with your old single list:
   links?: FooterLink[];
-};
-
+}

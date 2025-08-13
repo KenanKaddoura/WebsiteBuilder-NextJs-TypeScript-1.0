@@ -1,6 +1,7 @@
 import HeaderBar from "@/components/HeaderBar";
 import SectionLibrary from "@/components/SectionLibrary";
 import PreviewSpace from "@/components/PreviewSpace";
+import EditPanel from "@/components/EditPanel";
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
           <PreviewSpace />
         </div>
         <SectionLibrary />
+        <EditPanel />
       </div>
     </div>
   );

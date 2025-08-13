@@ -5,11 +5,14 @@ import { DragDropContext, Droppable, Draggable } from "@hello-pangea/dnd";
 import SectionProducer from "./sections/SectionProducer";
 import { useSectionsStore } from "@/store/useSectionsStore";
 import Image from "next/image";
- 
+
 export default function PreviewSpace() {
   const sections = useSectionsStore((state) => state.sections);
   const reorderSections = useSectionsStore((state) => state.reorderSections);
   const removeSection = useSectionsStore((state) => state.removeSection);
+  const setEditingSection = useSectionsStore(
+    (state) => state.setEditingSection
+  );
 
   const handleDragEnd = (result: any) => {
     if (!result.destination) return;
@@ -24,7 +27,13 @@ export default function PreviewSpace() {
           <div className="h-screen flex items-center justify-center">
             <div className="text-center p-8">
               <div className="mb-4">
-                <Image src="/click.png" alt="Logo" width={40} height={40} className="mx-auto"/>
+                <Image
+                  src="/click.png"
+                  alt="Logo"
+                  width={40}
+                  height={40}
+                  className="mx-auto"
+                />
               </div>
               <h3 className="text-lg font-sans font-medium text-gray-900">
                 No sections added yet
@@ -46,7 +55,7 @@ export default function PreviewSpace() {
                 >
                   {sections.map((section, index) => (
                     <Draggable
-                      key={section.id}
+                      key={`section-${section.id}`}
                       draggableId={section.id}
                       index={index}
                     >
@@ -61,24 +70,40 @@ export default function PreviewSpace() {
                               : "border-transparent"
                           } transition-colors mb-4`}
                         >
-                          <button
-                            onClick={() => removeSection(section.id)}
-                            className="absolute top-2 right-2 z-10 p-1 bg-red-500 rounded-full text-white opacity-0 group-hover:opacity-100 transition-opacity hover:bg-red-600"
-                            aria-label="Delete section"
-                          >
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              className="h-4 w-4"
-                              viewBox="0 0 20 20"
-                              fill="currentColor"
+                          <div className="absolute top-2 right-2 z-10 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                            <button
+                              onClick={() => setEditingSection(section.id)}
+                              className="p-1 bg-blue-500 rounded-full text-white hover:bg-blue-600"
+                              aria-label="Edit section"
                             >
-                              <path
-                                fillRule="evenodd"
-                                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                                clipRule="evenodd"
-                              />
-                            </svg>
-                          </button>
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                className="h-4 w-4"
+                                viewBox="0 0 20 20"
+                                fill="currentColor"
+                              >
+                                <path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z" />
+                              </svg>
+                            </button>
+                            <button
+                              onClick={() => removeSection(section.id)}
+                              className="p-1 bg-red-500 rounded-full text-white hover:bg-red-600"
+                              aria-label="Delete section"
+                            >
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                className="h-4 w-4"
+                                viewBox="0 0 20 20"
+                                fill="currentColor"
+                              >
+                                <path
+                                  fillRule="evenodd"
+                                  d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                  clipRule="evenodd"
+                                />
+                              </svg>
+                            </button>
+                          </div>
                           <SectionProducer section={section} />
                         </div>
                       )}

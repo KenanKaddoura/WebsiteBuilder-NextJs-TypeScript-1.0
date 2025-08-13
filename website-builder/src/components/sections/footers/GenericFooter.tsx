@@ -2,9 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { FooterSection } from "@/types/sections";
 
-// (Optional) icons via lucide-react or your own SVGs
-// npm i lucide-react
-
 
 function SocialIcon({ platform }: { platform: string }) {
   const size = 18;
@@ -29,7 +26,7 @@ function SocialIcon({ platform }: { platform: string }) {
 }
 
 export function GenericFooter({ section }: { section: FooterSection }) {
-  const year = new Date().getFullYear();
+  const year = "2025";
   const brand = section.brand;
   const columns = section.columns ?? (section.links ? [{ heading: "Links", links: section.links }] : []);
   const socials = section.socialLinks ?? [];
@@ -57,26 +54,12 @@ export function GenericFooter({ section }: { section: FooterSection }) {
                 </span>
               )}
             </div>
-
-            {brand?.blurb && (
-              <p className="mt-4 text-sm leading-relaxed text-gray-400">
-                {brand.blurb}
-              </p>
-            )}
-
-            {(brand?.address || brand?.email || brand?.phone) && (
-              <ul className="mt-4 space-y-1 text-sm">
-                {brand.address && <li className="text-gray-400">{brand.address}</li>}
-                {brand.email && (
-                  <li>
-                    <a className="hover:text-white" href={`mailto:${brand.email}`}>
-                      {brand.email}
-                    </a>
-                  </li>
-                )}
-                {brand.phone && <li className="text-gray-400">{brand.phone}</li>}
-              </ul>
-            )}
+    
+              {brand?.email && (
+                  <a className="hover:text-white" href={`mailto:${brand.email}`}>
+                    {brand.email}
+                  </a>
+              )}
 
             {!!socials.length && (
               <div className="mt-5 flex gap-4" aria-label="Social links">

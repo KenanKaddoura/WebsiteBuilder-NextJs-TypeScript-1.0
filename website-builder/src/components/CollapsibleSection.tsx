@@ -11,7 +11,7 @@ export default function CollapsibleSection({
   title,
   children,
 }: CollapsibleSectionProps) {
-  const [isExpanded, setIsExpanded] = useState(true);
+  const [isExpanded, setIsExpanded] = useState(false);
 
   return (
     <div className="border border-gray-200 rounded-md bg-white mb-4">
