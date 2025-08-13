@@ -119,44 +119,6 @@ export function GenericFooter({ section }: { section: FooterSection }) {
               </ul>
             </div>
           ))}
-
-          {/* Newsletter */}
-          {section.newsletter?.enabled && (
-            <div className="lg:col-span-2">
-              <h4 className="text-sm font-semibold uppercase tracking-wider text-white">
-                {section.newsletter.heading ?? "Newsletter"}
-              </h4>
-              {section.newsletter.subtext && (
-                <p className="mt-2 text-sm text-gray-400">
-                  {section.newsletter.subtext}
-                </p>
-              )}
-              <form
-                className="mt-4 flex max-w-md gap-2"
-                onSubmit={(e) => {
-                  e.preventDefault();
-                  // Hook this to your action / API later
-                }}
-              >
-                <input
-                  type="email"
-                  required
-                  placeholder={section.newsletter.placeholder ?? "Enter your email"}
-                  className="w-full rounded-md border border-gray-800 bg-gray-900 px-3 py-2 text-sm text-gray-100 placeholder-gray-500 outline-none focus:border-gray-700"
-                  aria-label="Email address"
-                />
-                <button
-                  type="submit"
-                  className="rounded-md bg-white px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-200"
-                >
-                  {section.newsletter.ctaLabel ?? "Subscribe"}
-                </button>
-              </form>
-              <p className="mt-2 text-xs text-gray-500">
-                We respect your privacy. Unsubscribe at any time.
-              </p>
-            </div>
-          )}
         </div>
 
         {/* Bottom bar */}
