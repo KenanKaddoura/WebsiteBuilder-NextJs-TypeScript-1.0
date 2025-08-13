@@ -10,6 +10,7 @@ interface SectionsState {
   reorderSections: (sourceIndex: number, destinationIndex: number) => void;
   clearSections: () => void;
   setEditingSection: (id: string | null) => void;
+  setSections: (sections: BaseSection[]) => void;
 }
 
 export const useSectionsStore = create<SectionsState>((set) => ({
@@ -40,4 +41,5 @@ export const useSectionsStore = create<SectionsState>((set) => ({
     }),
   clearSections: () => set({ sections: [], editingSectionId: null }),
   setEditingSection: (id) => set({ editingSectionId: id }),
+  setSections: (sections) => set({ sections, editingSectionId: null }),
 }));
