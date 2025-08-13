@@ -20,8 +20,8 @@ export default function PreviewSpace() {
   };
 
   return (
-    <div className="h-full overflow-y-auto bg-orange-50 rounded-lg shadow-inner mx-4">
-      <div className="min-h-full w-full max-w-6xl mx-auto">
+    <div className="min-h-full overflow-y-auto bg-orange-100 rounded-lg shadow-inner mx-4 mt-4 mb-4">
+      <div className="max-h-screen w-full max-w-6xl mx-auto">
         {/* Empty PreviewSpace */}
         {sections.length === 0 ? (
           <div className="h-screen flex items-center justify-center">
@@ -30,17 +30,17 @@ export default function PreviewSpace() {
                 <Image
                   src="/click.png"
                   alt="Logo"
-                  width={40}
-                  height={40}
+                  width={70}
+                  height={70}
                   className="mx-auto"
                 />
               </div>
-              <h3 className="text-lg font-sans font-medium text-gray-900">
-                No sections added yet
+              <h3 className="text-lg font-sans font-bold text-gray-900">
+                No Sections Added Yet !
               </h3>
-              <p className="mt-1 text-sm font-sans text-gray-500">
-                Click on the sections from the library to start building your
-                website
+              <p className="mt-1 text-sm font-sans font-medium text-gray-500">
+                Click on The Sections From The Library to Start Building Your
+                Website !
               </p>
             </div>
           </div>
@@ -66,9 +66,9 @@ export default function PreviewSpace() {
                           {...provided.dragHandleProps}
                           className={`preview-section border-2 relative group ${
                             snapshot.isDragging
-                              ? "border-orange-500 shadow-lg"
+                              ? "border-orange-500 rounded shadow-lg"
                               : "border-transparent"
-                          } transition-colors mb-4`}
+                          } transition-colors`}
                         >
                           <div className="absolute top-2 right-2 z-10 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
                             <button

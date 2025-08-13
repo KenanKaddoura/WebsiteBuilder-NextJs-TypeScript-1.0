@@ -19,15 +19,15 @@ export default function SectionsContainer({
 
   return (
     <CollapsibleSection title={title}>
-      <div className="grid grid-cols-1 gap-4">
+      <div className="grid grid-cols-1 gap-4 rounded-lg ">
         {sections.map((section) => (
           <div
             key={section.id}
-            className="border border-gray-200 rounded-md p-3 hover:shadow-md cursor-pointer transition-all"
+            className="wborder border-l-4 rounded-md p-3 hover:shadow-md cursor-pointer transition-all"
             onClick={() => addSection(section)}
           >
-            <div className="aspect-video bg-gray-700 mb-2 rounded-md overflow-hidden relative">
-              <Image
+            <div className="aspect-video bg-gray-700 mb-2 rounded-md overflow-hidden relative drop-shadow-xl">
+              <Image  
                 src={section.thumbnail}
                 alt={section.title}
                 style={{objectFit: section.type === "header" || 

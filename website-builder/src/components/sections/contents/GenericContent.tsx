@@ -8,7 +8,7 @@ interface GenericContentProps {
 export function GenericContent({ section }: GenericContentProps) {
   if (section.contentStyle === "two-columns-image") {
     return (
-      <div className="py-16 px-6 bg-white shadow-sm">
+      <div className="py-16 px-6 bg-white shadow-sm rounded">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
             <div className="col-span-2 grid grid-cols-1 gap-6">
@@ -34,7 +34,7 @@ export function GenericContent({ section }: GenericContentProps) {
   }
 
   return (
-    <div className="py-16 px-6 bg-white shadow-sm">
+    <div className="py-16 px-6 bg-white shadow-sm rounded">
       <div className="max-w-3xl mx-auto text-center">
         <h2 className="text-3xl font-bold text-black mb-6">
           {section.content.title}

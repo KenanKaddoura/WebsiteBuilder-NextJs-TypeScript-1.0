@@ -5,8 +5,8 @@ export const MinimalFooter: FooterSection = {
   id: "minimal-footer",
   type: "footer",
   title: "Minimal Footer",
-  description: "Compact footer with brand, a couple of links, and socials",
-  thumbnail: "https://wallpapershome.com/images/pages/ico_h/26788.jpg",
+  description: "",
+  thumbnail: "/SectionLibraryImages/footer2.png",
   brand: {
     name: "Rekaz",
     email: "support@rekaz.dev",
@@ -42,8 +42,8 @@ export const CompanyFooter: FooterSection = {
   id: "company-footer",
   type: "footer",
   title: "Company Footer",
-  description: "Brand + 3 columns + socials + bottom bar",
-  thumbnail: "https://wallpapershome.com/images/pages/ico_h/26788.jpg",
+  description: "",
+  thumbnail: "/SectionLibraryImages/footer1.png",
   brand: {
     name: "Rekaz",
     email: "support@rekaz.dev",
@@ -95,8 +95,8 @@ export const EcommerceFooter: FooterSection = {
   id: "ecommerce-footer",
   type: "footer",
   title: "E‑commerce Footer",
-  description: "Retail‑style footer with newsletter",
-  thumbnail: "https://wallpapershome.com/images/pages/ico_h/26788.jpg",
+  description: "",
+  thumbnail: "/SectionLibraryImages/footer3.png",
   brand: {
     name: "Rekaz Store",
   },

@@ -7,10 +7,10 @@ interface GenericHeroProps {
 export function GenericHero({ section }: GenericHeroProps) {
   return (
     <div
-      className="relative h-[70vh] flex items-center justify-center bg-cover bg-center"
+      className="relative h-[70vh] flex items-center justify-center bg-cover bg-center rounded"
       style={{ backgroundImage: `url(${section.backgroundImage})` }}
     >
-      <div className="absolute inset-0 bg-black/50" />
+      <div className="absolute inset-0 bg-black/50 rounded" />
       <div className="relative z-10 text-center text-white px-4">
         <h1 className="text-5xl font-bold mb-4">{section.heading}</h1>
         <p className="text-xl mb-8">{section.subheading}</p>

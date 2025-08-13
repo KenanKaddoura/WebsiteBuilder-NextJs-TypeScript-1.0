@@ -3,9 +3,9 @@ import { ContentSection } from "@/types/sections";
 export const TwoColumnsWithImage: ContentSection = {
   id: "two-columns-image",
   type: "content",
-  title: "Two Columns With Image",
-  description: "Text in two columns with a featured image",
-  thumbnail: "https://wallpapershome.com/images/pages/ico_h/26788.jpg",
+  title: "Text With Image",
+  description: "",
+  thumbnail: "/SectionLibraryImages/content2.png",
   contentStyle: "two-columns-image",
   content: {
     title: "Left Column",
@@ -20,9 +20,9 @@ export const TwoColumnsWithImage: ContentSection = {
 export const SimpleHeaderParagraph: ContentSection = {
   id: "simple-header-paragraph",
   type: "content",
-  title: "Simple Header & Paragraph",
-  description: "Clean layout with header and paragraph",
-  thumbnail: "https://wallpapershome.com/images/pages/ico_h/27229.jpg",
+  title: "Header & Paragraph",
+  description: "",
+  thumbnail: "/SectionLibraryImages/content1.png",
   contentStyle: "header-paragraph",
   content: {
     title: "Your Compelling Header Here",

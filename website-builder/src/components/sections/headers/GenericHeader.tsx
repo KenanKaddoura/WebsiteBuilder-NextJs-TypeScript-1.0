@@ -7,7 +7,7 @@ interface GenericHeaderProps {
 
 export function GenericHeader({ section }: GenericHeaderProps) {
   return (
-    <header className="w-full px-6 py-4 bg-white shadow-sm">
+    <header className="w-full px-6 py-4 bg-white shadow-sm rounded ">
       <div className="max-w-6xl mx-auto flex items-center justify-between">
         {section.logo && (
           <div className="flex-shrink-0">

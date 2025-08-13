@@ -32,8 +32,8 @@ export function GenericFooter({ section }: { section: FooterSection }) {
   const socials = section.socialLinks ?? [];
 
   return (
-    <footer className="bg-gray-950 text-gray-300">
-      <div className="mx-auto max-w-7xl px-6 py-12 lg:px-8">
+    <footer className="bg-gray-950 text-gray-300 rounded">
+      <div className="mx-auto max-w-7xl px-6 py-12 lg:px-8 ">
         {/* Top grid */}
         <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-6">
           {/* Brand / About (span 2 on large screens) */}
