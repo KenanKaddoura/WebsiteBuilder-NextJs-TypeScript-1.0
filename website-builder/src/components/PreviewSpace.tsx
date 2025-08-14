@@ -5,6 +5,7 @@ import { DragDropContext, Droppable, Draggable } from "@hello-pangea/dnd";
 import SectionProducer from "./sections/SectionProducer";
 import { useSectionsStore } from "@/store/useSectionsStore";
 import Image from "next/image";
+import { toast } from "sonner";
 
 export default function PreviewSpace() {
   const sections = useSectionsStore((state) => state.sections);
@@ -16,7 +17,22 @@ export default function PreviewSpace() {
 
   const handleDragEnd = (result: any) => {
     if (!result.destination) return;
-    reorderSections(result.source.index, result.destination.index);
+
+    const { source, destination } = result;
+    const section = sections[source.index];
+
+    if (section.type === "header" && destination.index !== 0) {
+      toast.warning("Tip: Header Should Remain at The Top");
+    }
+
+    if (
+      section.type === "footer" &&
+      destination.index !== sections.length - 1
+    ) {
+      toast.warning("Tip: Footer Should Remain at The Bottom");
+    }
+
+    reorderSections(source.index, destination.index);
   };
 
   return (
@@ -64,7 +80,7 @@ export default function PreviewSpace() {
                           ref={provided.innerRef}
                           {...provided.draggableProps}
                           {...provided.dragHandleProps}
-                          className={`preview-section border-2 relative group ${
+                          className={`hover:border-orange-300 rounded-lg preview-section border-2 relative group ${
                             snapshot.isDragging
                               ? "border-orange-500 rounded shadow-lg"
                               : "border-transparent"
