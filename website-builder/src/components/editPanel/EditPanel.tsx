@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, {useEffect, useState} from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useSectionsStore } from "@/store/useSectionsStore";
 import dynamic from "next/dynamic";
@@ -36,9 +36,9 @@ export default function EditPanel() {
   const editingSection = sections.find((s) => s.id === editingSectionId);
 
   // Handle mobile view
-  const [isMobileView, setIsMobileView] = React.useState(false);
+  const [isMobileView, setIsMobileView] = useState(false);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const checkMobile = () => setIsMobileView(window.innerWidth < 768);
     checkMobile();
     window.addEventListener("resize", checkMobile);

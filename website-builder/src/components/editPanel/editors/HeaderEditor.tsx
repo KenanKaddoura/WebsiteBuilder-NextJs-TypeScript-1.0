@@ -2,6 +2,8 @@
 
 import { HeaderSection } from "@/types/sections";
 import { useState, useEffect, useCallback } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import InputWithLink from "@/components/ui/InputWithLink";
 
 interface HeaderEditorProps {
   section: HeaderSection;
@@ -11,7 +13,7 @@ interface HeaderEditorProps {
 export function HeaderEditor({ section, onUpdate }: HeaderEditorProps) {
   const [navigation, setNavigation] = useState(section.navigation);
 
-  // Use useCallback to memoize the update function
+
   const updateNavigation = useCallback(
     (newNavigation: typeof navigation) => {
       setNavigation(newNavigation);
@@ -20,15 +22,6 @@ export function HeaderEditor({ section, onUpdate }: HeaderEditorProps) {
     [onUpdate]
   );
 
-  const addNavItem = () => {
-    const newNavigation = [...navigation, { label: "New Link", link: "/" }];
-    updateNavigation(newNavigation);
-  };
-
-  const removeNavItem = (index: number) => {
-    const newNavigation = navigation.filter((_, i) => i !== index);
-    updateNavigation(newNavigation);
-  };
 
   return (
     <div className="space-y-6">
@@ -50,48 +43,56 @@ export function HeaderEditor({ section, onUpdate }: HeaderEditorProps) {
           <label className="block text-sm font-medium text-gray-700">
             Navigation
           </label>
-          <button
-            onClick={addNavItem}
-            className="text-sm text-orange-500 hover:text-orange-600 font-semi-bold"
-            type="button"
-          >
-            + Add Link
-          </button>
         </div>
         {navigation.map((item, index) => (
-          <div key={`nav-item-${index}`} className="flex gap-2 items-center">
-            <input
-              type="text"
+            <InputWithLink
+              key={index}
+              label={item.label}
               value={item.label}
-              onChange={(e) => {
+              linkValue={item.link}
+              onValueChange={(value) => {
                 const newNav = [...navigation];
-                newNav[index] = { ...item, label: e.target.value };
+                newNav[index] = { ...item, label: value.target.value };
                 updateNavigation(newNav);
               }}
-              className="flex-1 px-3 py-2 border border-gray-300 rounded-md"
-              placeholder="Label"
-            />
-            <input
-              type="text"
-              value={item.link}
-              onChange={(e) => {
+              onLinkChange={(value) => {
                 const newNav = [...navigation];
-                newNav[index] = { ...item, link: e.target.value };
+                newNav[index] = { ...item, link: value.target.value };
                 updateNavigation(newNav);
               }}
-              className="flex-1 px-3 py-2 border border-gray-300 rounded-md"
-              placeholder="Link"
-            />
-            <button
-              onClick={() => removeNavItem(index)}
-              className="p-2 text-red-500 hover:text-red-600"
-              type="button"
-            >
-              ×
-            </button>
-          </div>
+            /> 
         ))}
       </div>
     </div>
   );
 }
+
+          // <div key={`nav-item-${index}`} className="flex gap-2 items-center">
+          //   <input
+          //     type="text"
+          //     value={item.label}
+          //     onChange={(e) => {
+          //       const newNav = [...navigation];
+          //       newNav[index] = { ...item, label: e.target.value };
+          //       updateNavigation(newNav);
+          //     }}
+          //     className="flex-1 px-3 py-2 border border-gray-300 rounded-md"
+          //     placeholder="Label"
+          //   />
+          //   <input
+          //     type="text"
+          //     value={item.link}
+          //     onChange={(e) => {
+
+          //     }}
+          //     className="flex-1 px-3 py-2 border border-gray-300 rounded-md"
+          //     placeholder="Link"
+          //   />
+          //   <button
+          //     onClick={() => removeNavItem(index)}
+          //     className="p-2 text-red-500 hover:text-red-600"
+          //     type="button"
+          //   >
+          //     ×
+          //   </button>
+          // </div>
