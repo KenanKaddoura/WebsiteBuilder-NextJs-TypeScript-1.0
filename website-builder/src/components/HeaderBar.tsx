@@ -9,7 +9,7 @@ import {
   ImportAcceptSchema,
 } from "@/lib/configSchema";
 import { CURRENT_VERSION, runMigrations } from "@/lib/migrations";
-
+import { toast } from "sonner";
 
 export default function HeaderBar() {
   const clearSections = useSectionsStore((state) => state.clearSections);
@@ -57,7 +57,7 @@ export default function HeaderBar() {
       const migrated = runMigrations(incomingSections, incomingVersion);
 
       setSections(migrated as unknown as BaseSection[]);
-      alert("Design imported successfully.");
+      toast.success("Design Imported Successfully.");
     }, [setSections]);
 
     const handleImportClick = useCallback(() => {
@@ -87,7 +87,7 @@ export default function HeaderBar() {
                   importFromText(text);
                 } catch (err) {
                   console.error(err);
-                  alert("Failed to import file. Ensure it's valid JSON.");
+                  toast.error("Failed to Import File. Ensure It's Valid JSON.");
                 } finally {
                   if (fileInputRef.current) fileInputRef.current.value = "";
                 }

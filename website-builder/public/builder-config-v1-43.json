@@ -1,0 +1,110 @@
+{
+  "app": "Website-Builder",
+  "version": 1,
+  "exportedAt": "2025-08-14T01:45:43.557Z",
+  "sections": [
+    {
+      "id": "59e358ac-922e-4253-90f6-598cdd40b14f",
+      "type": "footer",
+      "title": "Company Footer",
+      "description": "",
+      "thumbnail": "/SectionLibraryImages/footer1.png",
+      "brand": {
+        "name": "Rekaz",
+        "email": "support@rekaz.dev"
+      },
+      "columns": [
+        {
+          "heading": "Product",
+          "links": [
+            {
+              "label": "Features",
+              "link": "/features"
+            },
+            {
+              "label": "Pricing",
+              "link": "/pricing"
+            },
+            {
+              "label": "Integrations",
+              "link": "/integrations"
+            },
+            {
+              "label": "Changelog",
+              "link": "/changelog"
+            }
+          ]
+        },
+        {
+          "heading": "Resources",
+          "links": [
+            {
+              "label": "Docs",
+              "link": "/docs"
+            },
+            {
+              "label": "Guides",
+              "link": "/guides"
+            },
+            {
+              "label": "API Status",
+              "link": "/status"
+            },
+            {
+              "label": "Community",
+              "link": "/community"
+            }
+          ]
+        },
+        {
+          "heading": "Company",
+          "links": [
+            {
+              "label": "About",
+              "link": "/about"
+            },
+            {
+              "label": "Careers",
+              "link": "/careers"
+            },
+            {
+              "label": "Contact",
+              "link": "/contact"
+            },
+            {
+              "label": "Press",
+              "link": "/press"
+            }
+          ]
+        }
+      ],
+      "socialLinks": [
+        {
+          "platform": "x",
+          "link": "https://x.com/rekaz"
+        },
+        {
+          "platform": "linkedin",
+          "link": "https://linkedin.com/company/rekaz"
+        }
+      ],
+      "bottom": {
+        "copyrightName": "Rekaz",
+        "links": [
+          {
+            "label": "Privacy",
+            "link": "/privacy"
+          },
+          {
+            "label": "Terms",
+            "link": "/terms"
+          },
+          {
+            "label": "Security",
+            "link": "/security"
+          }
+        ]
+      }
+    }
+  ]
+}
