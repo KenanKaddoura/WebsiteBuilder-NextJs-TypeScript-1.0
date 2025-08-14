@@ -90,7 +90,7 @@ export function FooterEditor({ section, onUpdate }: FooterEditorProps) {
   };
 
   const renderBrandPage = () => (
-    <div className="space-y-6">
+    <div className="space-y-6 ">
       <h3 className="text-lg font-medium text-gray-900">Brand Information</h3>
       <div className="space-y-4">
         <InputWithLink
@@ -303,7 +303,7 @@ export function FooterEditor({ section, onUpdate }: FooterEditorProps) {
       </div>
 
       {/* Fixed navigation footer */}
-      <div className="flex-shrink-0 border-t border-gray-200 bg-white p-4">
+      <div className="flex-shrink-0 wborder surface p-4">
         <div className="flex items-center justify-between">
           <button
             onClick={() => setCurrentPage((prev) => prev - 1)}
@@ -325,7 +325,7 @@ export function FooterEditor({ section, onUpdate }: FooterEditorProps) {
             </svg>
           </button>
           <div className="text-center">
-            <div className="text-sm font-medium text-gray-900">
+            <div className="text-sm font-medium text-gray-900 ">
               {getPageTitle()}
             </div>
             <div className="text-xs text-gray-500">

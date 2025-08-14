@@ -28,7 +28,7 @@ export function ContentEditor({ section, onUpdate }: ContentEditorProps) {
             type="text"
             value={section.content.title}
             onChange={(e) => handleContentChange("title", e.target.value)}
-            className="w-full px-3 py-2 border border-gray-300 rounded-md"
+            className="w-full px-3 py-2"
           />
         </div>
       )}
@@ -40,7 +40,7 @@ export function ContentEditor({ section, onUpdate }: ContentEditorProps) {
         <textarea
           value={section.content.mainText}
           onChange={(e) => handleContentChange("mainText", e.target.value)}
-          className="w-full px-3 py-2 border border-gray-300 rounded-md min-h-[150px]"
+          className="w-full px-3 py-2 min-h-[150px]"
         />
       </div>
 
@@ -53,7 +53,7 @@ export function ContentEditor({ section, onUpdate }: ContentEditorProps) {
             type="text"
             value={section.content.imageUrl}
             onChange={(e) => handleContentChange("imageUrl", e.target.value)}
-            className="w-full px-3 py-2 border border-gray-300 rounded-md"
+            className="w-full px-3 py-2"
           />
         </div>
       )}

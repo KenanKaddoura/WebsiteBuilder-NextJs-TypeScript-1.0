@@ -4,8 +4,9 @@ import { allSections } from "./sections";
 
 export default function SectionLibrary() {
   return (
-    <div className="sm:w-50 md:w-60 lg:w-70 xl:w-80 bg-orange-50 border-l border-orange-200 flex flex-col h-screen">
-      {/* Fixed Header */}
+    <div className="sm:w-50 md:w-60 lg:w-70 xl:w-80 surface wborder flex flex-col h-screen">
+      
+      {/* Header */}
       <div className="bg-orange-100 border-b border-orange-200 flex-shrink-0">
         <h2 className="text-2xl p-4 pb-1 text-orange-400 font-mono font-bold mb-4 drop-shadow-md">
           Sections Library

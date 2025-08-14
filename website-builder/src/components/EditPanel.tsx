@@ -107,10 +107,10 @@ export default function EditPanel() {
               isMobileView
                 ? "bottom-0 left-0 right-0 h-[80vh] rounded-t-xl"
                 : "top-0 right-0 h-full w-80"
-            } bg-white border-l border-gray-200 overflow-y-auto z-50`}
+            } surface wborder overflow-y-auto z-50`}
           >
-            <div className="sticky top-0 bg-white border-b border-gray-200 px-4 py-3 flex items-center justify-between">
-              <h3 className="text-lg font-sans font-medium text-gray-900">
+            <div className="sticky top-0 bg-orange-100 wborder px-4 py-3 flex items-center justify-between">
+              <h3 className="text-xl text-orange-400 font-mono font-bold  ">
                 Edit{" "}
                 {editingSection.type.charAt(0).toUpperCase() +
                   editingSection.type.slice(1)}
@@ -127,7 +127,7 @@ export default function EditPanel() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="p-4"
+              className="p-4 edit-panel"
             >
               {renderEditor()}
             </motion.div>

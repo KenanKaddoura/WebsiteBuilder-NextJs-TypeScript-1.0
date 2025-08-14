@@ -52,7 +52,7 @@ export function HeaderEditor({ section, onUpdate }: HeaderEditorProps) {
           </label>
           <button
             onClick={addNavItem}
-            className="text-sm text-blue-500 hover:text-blue-600"
+            className="text-sm text-orange-500 hover:text-orange-600 font-semi-bold"
             type="button"
           >
             + Add Link
