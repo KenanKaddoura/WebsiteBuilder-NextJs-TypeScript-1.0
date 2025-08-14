@@ -30,17 +30,17 @@ export default function HeaderBar() {
     ExportFileSchema.parse(payload);
 
     const blob = new Blob([JSON.stringify(payload, null, 2)], {
-      type: "application/json",
-    });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = `builder-config-v${CURRENT_VERSION}-${new Date().getSeconds().toString()}.json`;
-    document.body.appendChild(a);
-    a.click();
-    a.remove();
-    URL.revokeObjectURL(url);
-  }, [sections]);
+          type: "application/json",
+      });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = `builder-config-v${CURRENT_VERSION}-${new Date().getSeconds().toString()}.json`;
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        URL.revokeObjectURL(url);
+    }, [sections]);
 
     const importFromText = useCallback((text: string) => {
       // Accept either plain array or object-with-sections
@@ -114,7 +114,7 @@ export default function HeaderBar() {
             </button>
           </div>
 
-          <h1 className="text-2xl font-mono font-extrabold text-orange-400">
+          <h1 className="text-2xl font-mono font-extrabold text-orange-400  ">
             Website Builder
           </h1>
           <h1></h1>

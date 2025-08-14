@@ -1,7 +1,7 @@
 import HeaderBar from "@/components/HeaderBar";
 import SectionLibrary from "@/components/SectionLibrary";
 import PreviewSpace from "@/components/PreviewSpace";
-import EditPanel from "@/components/EditPanel";
+import EditPanel from "@/components/editPanel/EditPanel";
 
 export default function Home() {
   return (

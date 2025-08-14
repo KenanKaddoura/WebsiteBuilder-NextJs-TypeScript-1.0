@@ -3,7 +3,7 @@
 import { FooterSection, SocialPlatform } from "@/types/sections";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { LinkInput } from "./components/LinkInput";
+import { LinkInput } from "../../ui/LinkInput";
 
 interface FooterEditorProps {
   section: FooterSection;
@@ -116,7 +116,6 @@ export function FooterEditor({ section, onUpdate }: FooterEditorProps) {
             <label className="block text-sm font-medium text-gray-700">
               Social Links
             </label>
-
           </div>
           {section.socialLinks?.map((social, index) => (
             <InputWithLink
@@ -216,7 +215,6 @@ export function FooterEditor({ section, onUpdate }: FooterEditorProps) {
             <label className="block text-sm font-medium text-gray-700">
               Bottom Links
             </label>
-
           </div>
           {section.bottom?.links?.map((link, index) => (
             <InputWithLink
@@ -321,8 +319,6 @@ export function FooterEditor({ section, onUpdate }: FooterEditorProps) {
           </button>
         </div>
       </div>
-
-
     </div>
   );
 }

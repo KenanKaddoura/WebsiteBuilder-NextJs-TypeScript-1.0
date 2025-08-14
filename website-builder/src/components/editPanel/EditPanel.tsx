@@ -7,16 +7,16 @@ import dynamic from "next/dynamic";
 
 // Dynamic imports without disabling SSR
 const HeaderEditor = dynamic(() =>
-  import("./editPanel/HeaderEditor").then((mod) => mod.HeaderEditor)
+  import("./editors/HeaderEditor").then((mod) => mod.HeaderEditor)
 );
 const HeroEditor = dynamic(() =>
-  import("./editPanel/HeroEditor").then((mod) => mod.HeroEditor)
+  import("./editors/HeroEditor").then((mod) => mod.HeroEditor)
 );
 const ContentEditor = dynamic(() =>
-  import("./editPanel/ContentEditor").then((mod) => mod.ContentEditor)
+  import("./editors/ContentEditor").then((mod) => mod.ContentEditor)
 );
 const FooterEditor = dynamic(() =>
-  import("./editPanel/FooterEditor").then((mod) => mod.FooterEditor)
+  import("./editors/FooterEditor").then((mod) => mod.FooterEditor)
 );
 import {
   ContentSection,
