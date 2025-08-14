@@ -4,7 +4,7 @@ import { allSections } from "./sections";
 
 export default function SectionLibrary() {
   return (
-    <div className="sm:w-50 md:w-60 lg:w-70 xl:w-80 surface wborder flex flex-col h-screen">
+    <div className="xs:w-40 sm:w-50 md:w-60 lg:w-70 xl:w-80 surface wborder flex flex-col h-screen">
       
       {/* Header */}
       <div className="bg-orange-100 border-b border-orange-200 flex-shrink-0">

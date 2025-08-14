@@ -116,18 +116,7 @@ export function FooterEditor({ section, onUpdate }: FooterEditorProps) {
             <label className="block text-sm font-medium text-gray-700">
               Social Links
             </label>
-            <button
-              onClick={() => {
-                const newLinks = [
-                  ...(section.socialLinks || []),
-                  { platform: "x" as SocialPlatform, link: "" },
-                ];
-                onUpdate({ socialLinks: newLinks });
-              }}
-              className="text-sm text-orange-500 hover:text-orange-600"
-            >
-              + Add Social
-            </button>
+
           </div>
           {section.socialLinks?.map((social, index) => (
             <InputWithLink
@@ -178,16 +167,6 @@ export function FooterEditor({ section, onUpdate }: FooterEditorProps) {
               <label className="block text-sm font-medium text-gray-700">
                 Links
               </label>
-              <button
-                onClick={() => {
-                  const newColumns = [...(section.columns || [])];
-                  newColumns[columnIndex].links.push({ label: "", link: "" });
-                  onUpdate({ columns: newColumns });
-                }}
-                className="text-sm text-orange-500 hover:text-orange-600"
-              >
-                + Add Link
-              </button>
             </div>
             {column.links.map((link, linkIndex) => (
               <InputWithLink
@@ -237,18 +216,7 @@ export function FooterEditor({ section, onUpdate }: FooterEditorProps) {
             <label className="block text-sm font-medium text-gray-700">
               Bottom Links
             </label>
-            <button
-              onClick={() => {
-                const newLinks = [
-                  ...(section.bottom?.links || []),
-                  { label: "", link: "" },
-                ];
-                onUpdate({ bottom: { ...section.bottom, links: newLinks } });
-              }}
-              className="text-sm text-orange-500 hover:text-orange-600"
-            >
-              + Add Link
-            </button>
+
           </div>
           {section.bottom?.links?.map((link, index) => (
             <InputWithLink
@@ -288,14 +256,14 @@ export function FooterEditor({ section, onUpdate }: FooterEditorProps) {
   return (
     <div className="flex flex-col h-full">
       {/* Scrollable content area */}
-      <div className="flex-1 overflow-y-auto">
+      <div className="flex-1 ">
         <AnimatePresence mode="wait">
           <motion.div
             key={currentPage}
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -20 }}
-            className="p-6"
+            className="p-1"
           >
             {getCurrentPageContent()}
           </motion.div>
@@ -303,7 +271,7 @@ export function FooterEditor({ section, onUpdate }: FooterEditorProps) {
       </div>
 
       {/* Fixed navigation footer */}
-      <div className="flex-shrink-0 wborder surface p-4">
+      <div className="flex-shrink-0 wborder surface p-4 mb-16">
         <div className="flex items-center justify-between">
           <button
             onClick={() => setCurrentPage((prev) => prev - 1)}
@@ -353,6 +321,8 @@ export function FooterEditor({ section, onUpdate }: FooterEditorProps) {
           </button>
         </div>
       </div>
+
+
     </div>
   );
 }

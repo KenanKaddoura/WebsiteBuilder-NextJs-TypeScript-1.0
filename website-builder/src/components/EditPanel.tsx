@@ -106,8 +106,8 @@ export default function EditPanel() {
             className={`fixed ${
               isMobileView
                 ? "bottom-0 left-0 right-0 h-[80vh] rounded-t-xl"
-                : "top-0 right-0 h-full w-80"
-            } surface wborder overflow-y-auto z-50`}
+                : "top-0 right-0 h-full overflow-y-auto w-80"
+            } surface wborder z-50`}
           >
             <div className="sticky top-0 bg-orange-100 wborder px-4 py-3 flex items-center justify-between">
               <h3 className="text-xl text-orange-400 font-mono font-bold  ">
