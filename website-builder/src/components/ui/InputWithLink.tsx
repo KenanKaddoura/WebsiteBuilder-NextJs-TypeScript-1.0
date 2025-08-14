@@ -9,8 +9,8 @@ interface InputWithLinkProps {
   label: string;
   value: string;
   linkValue: string;
-  onValueChange: (value: any) => void;
-  onLinkChange: (value: any) => void;
+  onValueChange: (value: string) => void;
+  onLinkChange: (value: string) => void;
 }
 
 export default function InputWithLink({
