@@ -2,8 +2,11 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   /* config options here */
-    images: {
-    remotePatterns: [new URL('https://wallpapershome.com/images/pages/**/**')],
+  images: {
+    remotePatterns: [
+      { protocol: "https", hostname: "wallpapershome.com", pathname: "/**" },
+      { protocol: "https", hostname: "images.unsplash.com", pathname: "/**" },
+    ],
   },
 };
 

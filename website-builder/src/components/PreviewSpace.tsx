@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { DragDropContext, Droppable, Draggable } from "@hello-pangea/dnd";
+import { DragDropContext, Droppable, Draggable, DropResult } from "@hello-pangea/dnd";
 import SectionProducer from "./sections/SectionProducer";
 import { useSectionsStore } from "@/store/useSectionsStore";
 import Image from "next/image";
@@ -15,7 +15,7 @@ export default function PreviewSpace() {
     (state) => state.setEditingSection
   );
 
-  const handleDragEnd = (result: any) => {
+  const handleDragEnd = (result: DropResult) => {
     if (!result.destination) return;
 
     const { source, destination } = result;

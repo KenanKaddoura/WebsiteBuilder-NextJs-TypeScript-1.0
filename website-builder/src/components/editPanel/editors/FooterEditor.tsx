@@ -64,7 +64,7 @@ export function FooterEditor({ section, onUpdate }: FooterEditorProps) {
               linkValue={social.link}
               onValueChange={(value) => {
                 const newLinks = [...(section.socialLinks || [])];
-                newLinks[index].platform = value as any;
+                newLinks[index].platform = value as SocialPlatform;
                 onUpdate({ socialLinks: newLinks });
               }}
               onLinkChange={(value) => {
