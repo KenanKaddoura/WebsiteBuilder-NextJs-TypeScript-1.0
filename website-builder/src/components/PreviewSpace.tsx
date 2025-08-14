@@ -20,8 +20,8 @@ export default function PreviewSpace() {
   };
 
   return (
-    <div className="min-h-full overflow-y-auto bg-orange-50 wborder shadow-lg mx-4 mt-4 mb-4">
-      <div className="max-h-screen w-full max-w-6xl mx-auto">
+    <div className="min-h-screen overflow-y-auto bg-orange-50 wborder shadow-lg mx-4 mt-4 mb-4">
+      <div className="max-h-screen w-full max-w-full mx-auto">
         {/* Empty PreviewSpace */}
         {sections.length === 0 ? (
           <div className="h-screen flex items-center justify-center">
