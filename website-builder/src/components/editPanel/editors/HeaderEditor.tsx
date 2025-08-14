@@ -52,12 +52,12 @@ export function HeaderEditor({ section, onUpdate }: HeaderEditorProps) {
               linkValue={item.link}
               onValueChange={(value) => {
                 const newNav = [...navigation];
-                newNav[index] = { ...item, label: value.target.value };
+                newNav[index] = { ...item, label: value};
                 updateNavigation(newNav);
               }}
               onLinkChange={(value) => {
                 const newNav = [...navigation];
-                newNav[index] = { ...item, link: value.target.value };
+                newNav[index] = { ...item, link: value };
                 updateNavigation(newNav);
               }}
             /> 
