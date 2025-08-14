@@ -4,10 +4,7 @@ import React, { useRef, useCallback } from "react";
 import Image from "next/image";
 import { useSectionsStore } from "@/store/useSectionsStore";
 import type { BaseSection } from "@/types/sections"; // your existing type
-import {
-  ExportFileSchema,
-  ImportAcceptSchema,
-} from "@/lib/configSchema";
+import { ExportFileSchema, ImportAcceptSchema } from "@/lib/configSchema";
 import { CURRENT_VERSION, runMigrations } from "@/lib/migrations";
 import { toast } from "sonner";
 
@@ -30,25 +27,29 @@ export default function HeaderBar() {
     ExportFileSchema.parse(payload);
 
     const blob = new Blob([JSON.stringify(payload, null, 2)], {
-          type: "application/json",
-      });
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement("a");
-        a.href = url;
-        a.download = `builder-config-v${CURRENT_VERSION}-${new Date().getSeconds().toString()}.json`;
-        document.body.appendChild(a);
-        a.click();
-        a.remove();
-        URL.revokeObjectURL(url);
-    }, [sections]);
+      type: "application/json",
+    });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `builder-config-v${CURRENT_VERSION}-${new Date()
+      .getSeconds()
+      .toString()}.json`;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    URL.revokeObjectURL(url);
+  }, [sections]);
 
-    const importFromText = useCallback((text: string) => {
+  const importFromText = useCallback(
+    (text: string) => {
       // Accept either plain array or object-with-sections
       const parsed = JSON.parse(text);
       const accepted = ImportAcceptSchema.parse(parsed);
 
-      const incomingVersion =
-        Array.isArray(accepted) ? undefined : accepted.version;
+      const incomingVersion = Array.isArray(accepted)
+        ? undefined
+        : accepted.version;
       const incomingSections = Array.isArray(accepted)
         ? accepted
         : accepted.sections;
@@ -58,21 +59,19 @@ export default function HeaderBar() {
 
       setSections(migrated as unknown as BaseSection[]);
       toast.success("Design Imported Successfully.");
-    }, [setSections]);
+    },
+    [setSections]
+  );
 
-    const handleImportClick = useCallback(() => {
-      fileInputRef.current?.click();
-    }, []);
-
-
+  const handleImportClick = useCallback(() => {
+    fileInputRef.current?.click();
+  }, []);
 
   return (
     <header className="sticky top-0 z-50 bg-gradient-to-r from-gray-600 to-gray-900 border-b border-orange-400 shadow-sm">
       <div className="container mx-auto px-4 py-3">
         <div className="flex items-center justify-between">
-
           <div className="flex items-center gap-3">
-
             {/* Hidden Input */}
             <input
               ref={fileInputRef}
@@ -94,16 +93,17 @@ export default function HeaderBar() {
               }}
             />
 
-
-            <button 
+            <button
               onClick={handleImportClick}
-              className="px-4 py-2 bg-orange-400 text-white font-mono rounded-md hover:bg-orange-600">
-                Import
+              className="px-4 py-2 bg-orange-400 text-white font-mono rounded-md hover:bg-orange-600"
+            >
+              Import
             </button>
-            <button 
+            <button
               onClick={handleExport}
-              className="px-4 py-2 bg-orange-400 text-white font-mono rounded-md hover:bg-orange-600">
-                Export
+              className="px-4 py-2 bg-orange-400 text-white font-mono rounded-md hover:bg-orange-600"
+            >
+              Export
             </button>
 
             <button
@@ -114,12 +114,15 @@ export default function HeaderBar() {
             </button>
           </div>
 
-          <h1 className="text-2xl font-mono font-extrabold text-orange-400  ">
+          {/* Title - hidden on small screens, visible from medium breakpoint */}
+          <h1 className="hidden md:block text-2xl font-mono font-extrabold text-orange-400">
             Website Builder
           </h1>
-          <h1></h1>
-
-          <Image src="/hammer.png" alt="Logo" width={40} height={40} />
+          <h1 className="hidden md:block"></h1>
+          {/* Logo - hidden on small screens, visible from medium breakpoint */}
+          <div className="hidden md:block">
+            <Image src="/hammer.png" alt="Logo" width={40} height={40} />
+          </div>
         </div>
       </div>
     </header>
